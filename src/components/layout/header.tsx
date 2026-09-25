@@ -188,7 +188,7 @@ export default function Header() {
             </a>
             <a
               href={`tel:${COMPANY.phoneRaw}`}
-              className="hidden whitespace-nowrap font-semibold text-neutral-900 xl:inline-flex dark:text-neutral-100"
+              className="hidden shrink-0 whitespace-nowrap font-semibold text-neutral-900 xl:inline-flex dark:text-neutral-100"
             >
               {COMPANY.phone}
             </a>

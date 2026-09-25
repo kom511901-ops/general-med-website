@@ -1,10 +1,10 @@
 export const COMPANY = {
-  name: 'Комплексные Решения',
-  phone: '+7 (800) 333-32-83',
-  phoneRaw: '+78003333283',
+  name: 'Дженерал Медицина',
+  phone: '+7 (920) 977-12-11',
+  phoneRaw: '+792097712111',
   email: 'info@general-med.ru',
   telegram: 'https://t.me/kompleksnye_resheniya',
-  whatsapp: 'https://wa.me/78003333283',
+  whatsapp: 'https://wa.me/792097712111',
 };
 
 export const METRICS = [
