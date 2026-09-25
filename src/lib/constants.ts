@@ -42,7 +42,7 @@ export const BRANDS = [
   'SonoScape',
 ];
 
-export const CLIENT_LOGOS = [
+export const CLIENT_LOGOS: string[] = [
   'МедЭксперт',
   'Здоровье+',
   'КлиникаПро',
