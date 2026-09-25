@@ -132,8 +132,8 @@ export default function Hero() {
               className="relative aspect-[4/5] overflow-hidden rounded-3xl shadow-2xl"
             >
               <Image
-                src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1200&q=80"
-                alt="Медицинское оборудование в современной клинике"
+                src="https://images.unsplash.com/photo-1631549916768-4119b2e5f926?auto=format&fit=crop&w=1600&q=85"
+                alt="Компьютерный томограф — оборудование для современной диагностики"
                 fill
                 sizes="(max-width: 1024px) 100vw, 45vw"
                 priority
