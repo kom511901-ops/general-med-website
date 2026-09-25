@@ -82,11 +82,12 @@ export default function Hero() {
 
               <motion.h1
                 variants={activeItemVariants}
-                className="mt-6 text-[clamp(40px,5vw,72px)] leading-[1.05] font-extrabold tracking-tight text-balance"
+                className="mt-6 text-[clamp(40px,4vw,60px)] leading-[1.05] font-extrabold tracking-tight text-pretty"
               >
-                Медицинское оборудование для клиник{' '}
+                Не переплачивайте за медтехнику
+                <br />
                 <span className="bg-gradient-to-r from-brand-500 to-accent-500 bg-clip-text text-transparent">
-                  нового поколения
+                  500+ клиник уже сэкономили с нами до 40%
                 </span>
               </motion.h1>
 
@@ -94,8 +95,8 @@ export default function Hero() {
                 variants={activeItemVariants}
                 className="mt-6 max-w-xl text-lg text-neutral-600 dark:text-neutral-400"
               >
-                Подбираем, поставляем, вводим в эксплуатацию и обучаем персонал. От УЗИ-аппаратов
-                среднего класса до премиальных МРТ.
+                Прямые поставки от Siemens, Philips, GE, Mindray, GEMSS. Лизинг от 0%, монтаж,
+                обучение и сервис — включены в стоимость.
               </motion.p>
 
               <motion.div variants={activeItemVariants} className="mt-10 flex flex-wrap gap-4">
