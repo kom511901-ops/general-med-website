@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import ThemeProvider from '@/components/common/theme-provider';
+import Header from '@/components/layout/header';
 import { Toaster } from '@/components/ui/sonner';
 import './globals.css';
 
@@ -33,6 +34,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           Перейти к контенту
         </a>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+          <Header />
           {children}
           <Toaster />
         </ThemeProvider>
