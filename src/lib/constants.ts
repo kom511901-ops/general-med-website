@@ -32,7 +32,7 @@ export const CATEGORIES: Category[] = [
       'Стационарные и портативные системы от среднего до премиум-класса. От базовой диагностики до экспертной кардиологии и акушерства.',
     icon: 'Activity',
     brands: ['Siemens', 'Philips', 'GE', 'Mindray', 'Samsung', 'Canon'],
-    image: '/images/hero-image.jpg',
+    image: 'https://images.unsplash.com/photo-1631549916768-4119b2e5f926?auto=format&fit=crop&w=1600&q=85',
     size: 'large',
   },
   {
@@ -41,7 +41,7 @@ export const CATEGORIES: Category[] = [
     description: 'Цифровые и аналоговые решения для клиник любого профиля.',
     icon: 'Scan',
     brands: ['Siemens', 'Philips', 'GEMSS', 'POSKOM'],
-    image: '/images/hero-image.jpg',
+    image: 'https://images.unsplash.com/photo-1631549916768-4119b2e5f926?auto=format&fit=crop&w=1600&q=85',
     size: 'default',
   },
   {
@@ -50,7 +50,7 @@ export const CATEGORIES: Category[] = [
     description: 'Высокопольные томографы 1.5 Тл и 3 Тл, 16–128 срезовые КТ.',
     icon: 'Layers',
     brands: ['Siemens', 'Philips', 'Canon', 'GE'],
-    image: '/images/hero-image.jpg',
+    image: 'https://images.unsplash.com/photo-1631549916768-4119b2e5f926?auto=format&fit=crop&w=1600&q=85',
     size: 'default',
   },
   {
@@ -59,7 +59,7 @@ export const CATEGORIES: Category[] = [
     description: 'Видеосистемы FullHD и 4K, гибкая и жёсткая оптика, стойки в сборе.',
     icon: 'Search',
     brands: ['Olympus', 'Pentax', 'Fujifilm'],
-    image: '/images/hero-image.jpg',
+    image: 'https://images.unsplash.com/photo-1631549916768-4119b2e5f926?auto=format&fit=crop&w=1600&q=85',
     size: 'default',
   },
   {
@@ -68,7 +68,7 @@ export const CATEGORIES: Category[] = [
     description: 'Комбайны, операционные микроскопы, эндоскопы и аудиометры.',
     icon: 'Ear',
     brands: ['ATMOS', 'Karl Storz', 'Zeiss'],
-    image: '/images/hero-image.jpg',
+    image: 'https://images.unsplash.com/photo-1631549916768-4119b2e5f926?auto=format&fit=crop&w=1600&q=85',
     size: 'default',
   },
   {
@@ -78,7 +78,7 @@ export const CATEGORIES: Category[] = [
       'Наркозно-дыхательные аппараты, ИВЛ, мониторы, дефибрилляторы, инфузионная техника.',
     icon: 'HeartPulse',
     brands: ['Dräger', 'Mindray', 'Philips', 'GE'],
-    image: '/images/hero-image.jpg',
+    image: 'https://images.unsplash.com/photo-1631549916768-4119b2e5f926?auto=format&fit=crop&w=1600&q=85',
     size: 'default',
   },
 ];
