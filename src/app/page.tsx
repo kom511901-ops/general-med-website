@@ -5,6 +5,7 @@ import WhyUs from '@/components/sections/why-us';
 import RoiCalculator from '@/components/sections/roi-calculator';
 import Cases from '@/components/sections/cases';
 import Exclusive from '@/components/sections/exclusive';
+import Steps from '@/components/sections/steps';
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <RoiCalculator />
       <Cases />
       <Exclusive />
+      <Steps />
     </main>
   );
 }

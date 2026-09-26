@@ -200,3 +200,57 @@ export const EXCLUSIVE_BRANDS: ExclusiveBrand[] = [
     ],
   },
 ];
+
+export interface WorkStep {
+  number: string;
+  icon: 'MessageSquare' | 'ClipboardList' | 'FileSignature' | 'Truck' | 'Wrench';
+  title: string;
+  description: string;
+  duration: string;
+}
+
+export const STEPS_SECTION = {
+  eyebrow: 'Как мы работаем',
+  title: 'От заявки до первого пациента',
+  subtitle:
+    'Берём на себя весь цикл — вам не нужно координировать поставщиков, монтажников и сервис',
+  cta: 'Обсудить задачу',
+};
+
+export const WORK_STEPS: WorkStep[] = [
+  {
+    number: '01',
+    icon: 'MessageSquare',
+    title: 'Консультация',
+    description: 'Разбираем задачи клиники, профиль пациентов и бюджет',
+    duration: '30 минут',
+  },
+  {
+    number: '02',
+    icon: 'ClipboardList',
+    title: 'Подбор оборудования',
+    description: 'Готовим 2–3 варианта конфигурации под ваш бюджет с расчётом окупаемости',
+    duration: '1–3 дня',
+  },
+  {
+    number: '03',
+    icon: 'FileSignature',
+    title: 'Договор и финансирование',
+    description: 'Прямая покупка, лизинг или рассрочка; помогаем с документами для лицензии',
+    duration: 'от 1 дня',
+  },
+  {
+    number: '04',
+    icon: 'Truck',
+    title: 'Поставка и монтаж',
+    description: 'Доставка, монтаж, ввод в эксплуатацию и обучение персонала',
+    duration: 'по графику поставки',
+  },
+  {
+    number: '05',
+    icon: 'Wrench',
+    title: 'Сервис',
+    description: 'Гарантийное и постгарантийное обслуживание, удалённая поддержка',
+    duration: 'весь срок службы',
+  },
+];
