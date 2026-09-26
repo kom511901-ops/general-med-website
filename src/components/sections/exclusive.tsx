@@ -2,13 +2,13 @@
 
 import Image from 'next/image';
 import { motion, useReducedMotion } from 'framer-motion';
-import { ArrowRight, Radiation, ScanLine } from 'lucide-react';
+import { ArrowRight, Scan, ScanLine } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { EXCLUSIVE_BRANDS, EXCLUSIVE_SECTION } from '@/lib/constants';
 import { cn } from '@/lib/utils';
 
 const BRAND_ICONS: Record<(typeof EXCLUSIVE_BRANDS)[number]['icon'], LucideIcon> = {
-  Radiation,
+  Scan,
   ScanLine,
 };
 
@@ -32,17 +32,30 @@ export default function Exclusive() {
           </span>
           <h2
             id="exclusive-heading"
-            className="mt-5 text-balance text-[clamp(32px,4vw,56px)] font-extrabold tracking-tight"
+            className="mt-5 text-balance text-center text-[clamp(32px,4vw,56px)] font-extrabold tracking-tight"
           >
             {EXCLUSIVE_SECTION.title}
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-neutral-500 dark:text-neutral-400">
-            {EXCLUSIVE_SECTION.subtitle}
-          </p>
+        <p className="mx-auto mt-4 max-w-2xl text-lg text-neutral-500 dark:text-neutral-400">
+          {EXCLUSIVE_SECTION.subtitle}
+        </p>
+        <ul
+          className="mt-8 flex flex-wrap justify-center gap-2"
+          aria-label="Преимущества поставки"
+        >
+          {EXCLUSIVE_SECTION.benefits.map((benefit) => (
+            <li
+              key={benefit}
+              className="rounded-full border border-brand-500/15 bg-brand-500/5 px-4 py-2 text-sm font-medium text-foreground"
+            >
+              {benefit}
+            </li>
+          ))}
+        </ul>
         </div>
 
         <motion.div
-          className="mt-14 grid gap-6 lg:grid-cols-2"
+          className="mt-10 grid gap-6 lg:grid-cols-2"
           variants={{
             hidden: {},
             visible: { transition: { staggerChildren: prefersReducedMotion ? 0 : 0.12 } },
@@ -62,7 +75,7 @@ export default function Exclusive() {
                   visible: { opacity: 1, y: 0 },
                 }}
                 transition={{ duration: prefersReducedMotion ? 0 : 0.45 }}
-                className="rounded-3xl bg-gradient-to-br from-brand-500/50 via-brand-500/20 to-accent-500/50 p-px"
+                className="h-full rounded-3xl bg-gradient-to-br from-brand-500/50 via-brand-500/20 to-accent-500/50 p-px"
               >
                 <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(1.5rem-1px)] bg-background/90 p-6 backdrop-blur-xl sm:p-8">
                   {brand.image ? (
@@ -85,7 +98,7 @@ export default function Exclusive() {
                     </div>
                   )}
 
-                  <div className="flex flex-wrap items-start justify-between gap-3">
+                  <div className="flex flex-wrap items-start gap-3">
                     <div>
                       {brand.logo ? (
                         <Image src={brand.logo} alt={`${brand.name} logo`} width={144} height={40} />
@@ -96,7 +109,6 @@ export default function Exclusive() {
                         {brand.country}
                       </div>
                     </div>
-                    <BrandIcon aria-hidden="true" className="mt-1 size-6 text-brand-500" />
                   </div>
 
                   <p className="mt-6 text-lg font-semibold text-foreground">{brand.positioning}</p>
@@ -112,18 +124,7 @@ export default function Exclusive() {
                     ))}
                   </ul>
 
-                  <ul className="mt-5 flex flex-wrap gap-2" aria-label="Преимущества поставки">
-                    {EXCLUSIVE_SECTION.benefits.map((benefit) => (
-                      <li
-                        key={benefit}
-                        className="rounded-full border border-brand-500/15 bg-brand-500/5 px-3 py-1.5 text-xs font-medium text-foreground"
-                      >
-                        {benefit}
-                      </li>
-                    ))}
-                  </ul>
-
-                  <div className="mt-8 flex flex-wrap items-center gap-4">
+                  <div className="mt-auto flex flex-wrap items-center gap-4 pt-8">
                     <a
                       href="#contact"
                       className="inline-flex h-11 items-center justify-center rounded-lg bg-gradient-to-r from-brand-500 to-accent-500 px-5 text-sm font-semibold text-white transition hover:shadow-lg focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2"

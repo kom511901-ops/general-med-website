@@ -163,7 +163,7 @@ export interface ExclusiveBrand {
   name: string;
   country: string;
   positioning: string;
-  icon: 'Radiation' | 'ScanLine';
+  icon: 'Scan' | 'ScanLine';
   logo?: string;
   image?: string;
   models: { name: string; description: string }[];
@@ -171,7 +171,7 @@ export interface ExclusiveBrand {
 
 export const EXCLUSIVE_SECTION = {
   eyebrow: 'Эксклюзивные поставки',
-  title: 'Прямые контракты с производителями из Южной Кореи',
+  title: 'Прямые контракты с корейскими производителями',
   subtitle: 'Без посредников — поэтому цена ниже, а сроки поставки и сервис под нашим контролем',
   benefits: ['Цена производителя', 'Склад и поставка', 'Гарантийный сервис'],
 };
@@ -181,7 +181,7 @@ export const EXCLUSIVE_BRANDS: ExclusiveBrand[] = [
     name: 'GEMSS',
     country: 'Южная Корея',
     positioning: 'Хирургические С-дуги и цифровая рентгенография',
-    icon: 'Radiation',
+    icon: 'Scan',
     models: [
       { name: 'SPINEL 12HD', description: 'Хирургическая С-дуга для интервенционных процедур' },
       { name: 'SPINEL 3G', description: 'Мобильная С-дуга для операционной и травматологии' },
@@ -194,8 +194,8 @@ export const EXCLUSIVE_BRANDS: ExclusiveBrand[] = [
     positioning: 'Портативный рентген на аккумуляторе',
     icon: 'ScanLine',
     models: [
-      { name: 'AirRay', description: 'Портативный рентген с аккумулятором, до 90 кВ, ~5,4 кг' },
-      { name: 'AirRay-mini', description: 'Ручной аппарат весом 2,9 кг' },
+      { name: 'AirRay', description: 'Портативный рентген с аккумулятором, до 90 кВ, ~5,4 кг' },
+      { name: 'AirRay-mini', description: 'Ручной аппарат весом 2,9 кг' },
       { name: 'PXM series', description: 'Мобильные рентгеновские генераторы' },
     ],
   },
