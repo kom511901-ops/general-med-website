@@ -20,7 +20,7 @@ export interface Category {
   description: string;
   icon: 'Activity' | 'Scan' | 'Layers' | 'Search' | 'Ear' | 'HeartPulse';
   brands: string[];
-  image: string;
+  image?: string;
   size: 'large' | 'default';
 }
 
@@ -107,4 +107,54 @@ export const CLIENT_LOGOS: string[] = [
   'ПрофМед',
   'АльфаМед',
   'МедЦентр',
+];
+
+export interface Case {
+  slug: string;
+  clinicName: string;
+  city: string;
+  equipmentType: string;
+  equipmentIcon: 'Activity' | 'Layers' | 'Ear';
+  keyMetric: string;
+  metricLabel: string;
+  description: string;
+  image: string;
+}
+
+export const CASES: Case[] = [
+  {
+    slug: 'medexpert-network',
+    clinicName: 'Сеть «МедЭксперт»',
+    city: '8 городов России',
+    equipmentType: 'УЗИ премиум-класса',
+    equipmentIcon: 'Activity',
+    keyMetric: '+40%',
+    metricLabel: 'к пропускной способности',
+    description:
+      'Оснастили 8 диагностических центров экспертными УЗИ-аппаратами Samsung HERA W10. Обучили 24 врача, запустили удалённое обслуживание.',
+    image: 'https://images.unsplash.com/photo-1631549916768-4119b2e5f926?auto=format&fit=crop&w=1600&q=85',
+  },
+  {
+    slug: 'kazan-ct-center',
+    clinicName: 'Диагностический центр «Казань»',
+    city: 'Казань',
+    equipmentType: 'КТ 80 срезов',
+    equipmentIcon: 'Layers',
+    keyMetric: '45 дней',
+    metricLabel: 'от договора до первого пациента',
+    description:
+      'Запустили КТ-кабинет с 80-срезовым Canon Aquilion Lightning под ключ: подготовка помещения, монтаж, помощь с лицензированием, обучение.',
+  },
+  {
+    slug: 'novosibirsk-lor',
+    clinicName: 'ЛОР-центр «Новосибирск»',
+    city: 'Новосибирск',
+    equipmentType: 'Полное оснащение ЛОР-центра',
+    equipmentIcon: 'Ear',
+    keyMetric: '3 месяца',
+    metricLabel: 'полный цикл от подбора до старта',
+    description:
+      'Оснастили специализированный ЛОР-центр: комбайны ATMOS, микроскопы Zeiss, эндоскопические стойки Karl Storz, аудиометры Interacoustics.',
+    image: 'https://images.unsplash.com/photo-1631549916768-4119b2e5f926?auto=format&fit=crop&w=1600&q=85',
+  },
 ];
