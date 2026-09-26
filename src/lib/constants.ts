@@ -20,7 +20,7 @@ export interface Category {
   description: string;
   icon: 'Activity' | 'Scan' | 'Layers' | 'Search' | 'Ear' | 'HeartPulse';
   brands: string[];
-  image?: string;
+  image: string;
   size: 'large' | 'default';
 }
 
@@ -118,7 +118,7 @@ export interface Case {
   keyMetric: string;
   metricLabel: string;
   description: string;
-  image: string;
+  image?: string;
 }
 
 export const CASES: Case[] = [
@@ -156,5 +156,47 @@ export const CASES: Case[] = [
     description:
       'Оснастили специализированный ЛОР-центр: комбайны ATMOS, микроскопы Zeiss, эндоскопические стойки Karl Storz, аудиометры Interacoustics.',
     image: 'https://images.unsplash.com/photo-1631549916768-4119b2e5f926?auto=format&fit=crop&w=1600&q=85',
+  },
+];
+
+export interface ExclusiveBrand {
+  name: string;
+  country: string;
+  positioning: string;
+  icon: 'Radiation' | 'ScanLine';
+  logo?: string;
+  image?: string;
+  models: { name: string; description: string }[];
+}
+
+export const EXCLUSIVE_SECTION = {
+  eyebrow: 'Эксклюзивные поставки',
+  title: 'Прямые контракты с производителями из Южной Кореи',
+  subtitle: 'Без посредников — поэтому цена ниже, а сроки поставки и сервис под нашим контролем',
+  benefits: ['Цена производителя', 'Склад и поставка', 'Гарантийный сервис'],
+};
+
+export const EXCLUSIVE_BRANDS: ExclusiveBrand[] = [
+  {
+    name: 'GEMSS',
+    country: 'Южная Корея',
+    positioning: 'Хирургические С-дуги и цифровая рентгенография',
+    icon: 'Radiation',
+    models: [
+      { name: 'SPINEL 12HD', description: 'Хирургическая С-дуга для интервенционных процедур' },
+      { name: 'SPINEL 3G', description: 'Мобильная С-дуга для операционной и травматологии' },
+      { name: 'TITAN 11', description: 'Стационарная DR-система' },
+    ],
+  },
+  {
+    name: 'POSKOM',
+    country: 'Южная Корея',
+    positioning: 'Портативный рентген на аккумуляторе',
+    icon: 'ScanLine',
+    models: [
+      { name: 'AirRay', description: 'Портативный рентген с аккумулятором, до 90 кВ, ~5,4 кг' },
+      { name: 'AirRay-mini', description: 'Ручной аппарат весом 2,9 кг' },
+      { name: 'PXM series', description: 'Мобильные рентгеновские генераторы' },
+    ],
   },
 ];

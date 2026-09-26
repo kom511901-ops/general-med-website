@@ -49,7 +49,7 @@ const categoryIcons: Record<string, LucideIcon> = {
 };
 
 const navigationLinks = [
-  { label: 'Эксклюзив', href: '/exclusive' },
+  { label: 'Эксклюзив', href: '#exclusive' },
   { label: 'Сервис', href: '/service' },
   { label: 'Кейсы', href: '/cases' },
   { label: 'База знаний', href: '/knowledge' },
