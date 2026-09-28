@@ -1,17 +1,12 @@
 'use client';
 
-import Image from 'next/image';
+import Link from 'next/link';
 import { motion, useReducedMotion } from 'framer-motion';
-import { ArrowRight, Scan, ScanLine } from 'lucide-react';
-import type { LucideIcon } from 'lucide-react';
-import { EXCLUSIVE_BRANDS, EXCLUSIVE_SECTION } from '@/lib/constants';
-import SectionHeading from '@/components/ui/section-heading';
+import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import Section from '@/components/ui/section';
-
-const BRAND_ICONS: Record<(typeof EXCLUSIVE_BRANDS)[number]['icon'], LucideIcon> = {
-  Scan,
-  ScanLine,
-};
+import SectionHeading from '@/components/ui/section-heading';
+import { buttonVariants } from '@/components/ui/button';
+import { EXCLUSIVE_BRANDS, EXCLUSIVE_SECTION } from '@/lib/constants';
 
 export default function Exclusive() {
   const prefersReducedMotion = useReducedMotion();
@@ -19,123 +14,91 @@ export default function Exclusive() {
   return (
     <motion.section
       id="exclusive"
-      initial={prefersReducedMotion ? false : { opacity: 0, y: 20 }}
-      whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
+      initial={prefersReducedMotion ? false : { opacity: 0 }}
+      whileInView={prefersReducedMotion ? undefined : { opacity: 1 }}
       viewport={{ once: true, margin: '-100px' }}
-      transition={{ duration: prefersReducedMotion ? 0 : 0.5 }}
+      transition={{ duration: prefersReducedMotion ? 0 : 0.6 }}
+      className="relative overflow-hidden bg-white dark:bg-neutral-950"
     >
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle,rgba(11,95,255,0.14)_1px,transparent_1px)] bg-[length:20px_20px] opacity-[0.03]"
+      />
       <Section>
-      <div className="container mx-auto max-w-7xl px-6 lg:px-8">
-        <SectionHeading
-          eyebrow={EXCLUSIVE_SECTION.eyebrow}
-          title={EXCLUSIVE_SECTION.title}
-          subtitle={EXCLUSIVE_SECTION.subtitle}
-        />
-        <ul
-          className="mt-8 flex flex-wrap justify-center gap-2"
-          aria-label="Преимущества поставки"
-        >
-          {EXCLUSIVE_SECTION.benefits.map((benefit) => (
-            <li
-              key={benefit}
-              className="rounded-full border border-brand-500/15 bg-brand-500/5 px-4 py-2 text-sm font-medium text-foreground"
-            >
-              {benefit}
-            </li>
-          ))}
-        </ul>
-        <motion.div
-          className="mt-10 grid gap-6 lg:grid-cols-2"
-          variants={{
-            hidden: {},
-            visible: { transition: { staggerChildren: prefersReducedMotion ? 0 : 0.12 } },
-          }}
-          initial={prefersReducedMotion ? false : 'hidden'}
-          whileInView={prefersReducedMotion ? undefined : 'visible'}
-          viewport={{ once: true, margin: '-100px' }}
-        >
-          {EXCLUSIVE_BRANDS.map((brand) => {
-            const BrandIcon = BRAND_ICONS[brand.icon];
+        <div className="container relative mx-auto max-w-7xl px-6 lg:px-8">
+          <SectionHeading
+            eyebrow={EXCLUSIVE_SECTION.eyebrow}
+            title={EXCLUSIVE_SECTION.title}
+            subtitle={EXCLUSIVE_SECTION.subtitle}
+            size="clamp"
+          />
 
-            return (
+          <motion.div
+            className="mt-16 grid gap-6 lg:grid-cols-2 lg:gap-8"
+            variants={{
+              hidden: {},
+              visible: { transition: { staggerChildren: prefersReducedMotion ? 0 : 0.15 } },
+            }}
+            initial={prefersReducedMotion ? false : 'hidden'}
+            whileInView={prefersReducedMotion ? undefined : 'visible'}
+            viewport={{ once: true, margin: '-100px' }}
+          >
+            {EXCLUSIVE_BRANDS.map((brand) => (
               <motion.article
-                key={brand.name}
+                key={brand.slug}
                 variants={{
                   hidden: { opacity: 0, y: prefersReducedMotion ? 0 : 24 },
                   visible: { opacity: 1, y: 0 },
                 }}
                 transition={{ duration: prefersReducedMotion ? 0 : 0.45 }}
-                className="h-full rounded-3xl bg-gradient-to-br from-brand-500/50 via-brand-500/20 to-accent-500/50 p-px"
+                className="rounded-2xl border border-neutral-200 bg-white p-8 transition-colors hover:border-brand-500/40 md:p-10 dark:border-neutral-800 dark:bg-neutral-900"
               >
-                <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(1.5rem-1px)] bg-background/90 p-6 backdrop-blur-xl sm:p-8">
-                  {brand.image ? (
-                    <div className="relative -mx-6 -mt-6 mb-6 aspect-[2/1] overflow-hidden sm:-mx-8 sm:-mt-8">
-                      <Image
-                        src={brand.image}
-                        alt={`${brand.name} equipment`}
-                        fill
-                        sizes="(max-width: 1024px) 100vw, 50vw"
-                        className="object-cover"
-                      />
-                    </div>
-                  ) : (
-                    <div className="mb-6 flex h-36 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-500/10 via-brand-500/5 to-accent-500/10">
-                      <BrandIcon
-                        aria-hidden="true"
-                        className="size-16 text-brand-500/70"
-                        strokeWidth={1.25}
-                      />
-                    </div>
-                  )}
-
-                  <div className="flex flex-wrap items-start gap-3">
-                    <div>
-                      {brand.logo ? (
-                        <Image src={brand.logo} alt={`${brand.name} logo`} width={144} height={40} />
-                      ) : (
-                        <div className="text-3xl font-extrabold tracking-tight">{brand.name}</div>
-                      )}
-                      <div className="mt-1 text-sm text-neutral-500 dark:text-neutral-400">
-                        {brand.country}
-                      </div>
-                    </div>
+                <div className="flex items-center gap-4">
+                  <div className="flex size-14 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-brand-500 to-accent-500 text-2xl font-bold text-white">
+                    {brand.initial}
                   </div>
-
-                  <p className="mt-6 text-lg font-semibold text-foreground">{brand.positioning}</p>
-
-                  <ul className="mt-6 divide-y divide-border/70">
-                    {brand.models.map((model) => (
-                      <li key={model.name} className="grid gap-1 py-4 sm:grid-cols-[8rem_1fr] sm:gap-4">
-                        <span className="font-semibold">{model.name}</span>
-                        <span className="text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
-                          {model.description}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  <div className="mt-auto flex flex-wrap items-center gap-4 pt-8">
-                    <a
-                      href="#contact"
-                      className="inline-flex h-11 items-center justify-center rounded-lg bg-gradient-to-r from-brand-500 to-accent-500 px-5 text-sm font-semibold text-white transition hover:shadow-lg focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2"
-                    >
-                      Запросить КП
-                    </a>
-                    {/* TODO: Link to the product catalog when the catalog page is available. */}
-                    <a
-                      href="#contact"
-                      className="inline-flex items-center gap-2 text-sm font-semibold text-brand-600 transition hover:gap-3 dark:text-brand-100"
-                    >
-                      Все модели
-                      <ArrowRight aria-hidden="true" className="size-4" />
-                    </a>
+                  <div>
+                    <h3 className="text-2xl font-bold">{brand.name}</h3>
+                    <p className="mt-1 text-sm text-neutral-500 dark:text-neutral-400">
+                      {brand.country}
+                    </p>
                   </div>
                 </div>
+
+                <p className="mt-6 text-base leading-relaxed text-neutral-600 dark:text-neutral-400">
+                  {brand.description}
+                </p>
+
+                <ul className="mt-6 space-y-3">
+                  {brand.advantages.map((advantage) => (
+                    <li key={advantage} className="flex items-start gap-3">
+                      <CheckCircle2
+                        aria-hidden="true"
+                        className="mt-0.5 size-5 shrink-0 text-emerald-500"
+                        strokeWidth={1.75}
+                      />
+                      <span className="text-sm leading-relaxed text-neutral-700 dark:text-neutral-300">
+                        {advantage}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+
+                <Link
+                  href="#contact"
+                  className={buttonVariants({
+                    variant: 'outline',
+                    size: 'lg',
+                    className: 'mt-8 w-full',
+                  })}
+                >
+                  Подробнее о {brand.name}
+                  <ArrowRight aria-hidden="true" className="ml-2 size-4" />
+                </Link>
               </motion.article>
-            );
-          })}
-        </motion.div>
-      </div>
+            ))}
+          </motion.div>
+        </div>
       </Section>
     </motion.section>
   );

@@ -5,6 +5,7 @@ export interface SectionHeadingProps {
   title: string;
   subtitle?: string;
   align?: 'center' | 'left';
+  size?: 'standard' | 'clamp';
 }
 
 export default function SectionHeading({
@@ -12,6 +13,7 @@ export default function SectionHeading({
   title,
   subtitle,
   align = 'center',
+  size = 'standard',
 }: SectionHeadingProps) {
   return (
     <div className={cn('max-w-4xl', align === 'center' ? 'mx-auto text-center' : 'text-left')}>
@@ -22,7 +24,9 @@ export default function SectionHeading({
       ) : null}
       <h2
         className={cn(
-          'text-balance text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl',
+          size === 'clamp'
+            ? 'text-balance text-[clamp(32px,4vw,56px)] font-extrabold tracking-tight'
+            : 'text-balance text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl',
           eyebrow && 'mt-5',
           align === 'center' && 'mx-auto',
         )}
