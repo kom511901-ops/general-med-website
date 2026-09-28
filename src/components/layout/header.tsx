@@ -227,7 +227,7 @@ export default function Header() {
                       <Link
                         href="/catalog"
                         onClick={closeSheet}
-                        className="block py-3 text-lg font-semibold text-foreground focus-visible:ring-2 focus-visible:ring-brand-500"
+                        className="block py-3 text-lg font-semibold text-foreground focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 focus-visible:outline-none"
                       >
                         Каталог
                       </Link>
@@ -237,7 +237,7 @@ export default function Header() {
                             <Link
                               href={`/catalog/${category.slug}`}
                               onClick={closeSheet}
-                              className="block py-2 text-sm text-muted-foreground focus-visible:ring-2 focus-visible:ring-brand-500"
+                              className="block py-2 text-sm text-muted-foreground focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 focus-visible:outline-none"
                             >
                               {category.name}
                             </Link>
@@ -250,7 +250,7 @@ export default function Header() {
                         <Link
                           href={item.href}
                           onClick={closeSheet}
-                          className="block py-3 text-lg font-semibold text-foreground focus-visible:ring-2 focus-visible:ring-brand-500"
+                          className="block py-3 text-lg font-semibold text-foreground focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 focus-visible:outline-none"
                         >
                           {item.label}
                         </Link>
@@ -279,7 +279,7 @@ export default function Header() {
                   </a>
                   <a
                     href={`tel:${COMPANY.phoneRaw}`}
-                    className="text-base font-semibold text-foreground focus-visible:ring-2 focus-visible:ring-brand-500"
+                    className="text-base font-semibold text-foreground focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 focus-visible:outline-none"
                   >
                     {COMPANY.phone}
                   </a>

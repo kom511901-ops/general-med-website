@@ -39,6 +39,7 @@ export default function TestimonialCard({ testimonial }: TestimonialCardProps) {
               alt={author.name}
               fill
               sizes="48px"
+              loading="lazy"
               className="object-cover"
             />
           ) : (

@@ -32,6 +32,7 @@ export default function CaseCard({ caseItem }: CaseCardProps) {
             width={800}
             height={450}
             sizes="(max-width: 768px) 100vw, 33vw"
+            loading="lazy"
             className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
         ) : (

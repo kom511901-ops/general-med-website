@@ -29,7 +29,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Telegram"
-                className="flex size-10 items-center justify-center rounded-full border border-neutral-800 transition hover:border-brand-500 hover:bg-brand-500/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
+                className="flex size-10 items-center justify-center rounded-full border border-neutral-800 transition hover:border-brand-500 hover:bg-brand-500/10 focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 focus-visible:outline-none"
               >
                 <Send aria-hidden="true" className="size-4" />
               </a>
@@ -38,14 +38,14 @@ export default function Footer() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="WhatsApp"
-                className="flex size-10 items-center justify-center rounded-full border border-neutral-800 transition hover:border-brand-500 hover:bg-brand-500/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
+                className="flex size-10 items-center justify-center rounded-full border border-neutral-800 transition hover:border-brand-500 hover:bg-brand-500/10 focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 focus-visible:outline-none"
               >
                 <MessageCircle aria-hidden="true" className="size-4" />
               </a>
               <a
                 href={`mailto:${COMPANY.email}`}
                 aria-label="Электронная почта"
-                className="flex size-10 items-center justify-center rounded-full border border-neutral-800 transition hover:border-brand-500 hover:bg-brand-500/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
+                className="flex size-10 items-center justify-center rounded-full border border-neutral-800 transition hover:border-brand-500 hover:bg-brand-500/10 focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 focus-visible:outline-none"
               >
                 <Mail aria-hidden="true" className="size-4" />
               </a>
@@ -59,7 +59,7 @@ export default function Footer() {
                 <ul className="space-y-3">
                   {group.links.map((link) => (
                     <li key={link.href}>
-                      <Link href={link.href} className="text-sm text-neutral-400 transition hover:text-white">
+                      <Link href={link.href} className="text-sm text-neutral-400 transition hover:text-white focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 focus-visible:outline-none">
                         {link.label}
                       </Link>
                     </li>
@@ -104,9 +104,9 @@ export default function Footer() {
             <p className="mt-1">ИНН {COMPANY.inn} · ОГРН {COMPANY.ogrn}</p>
           </div>
           <nav aria-label="Правовые документы" className="flex flex-wrap gap-x-6 gap-y-2">
-            <Link href="/privacy" className="transition hover:text-white">Политика конфиденциальности</Link>
-            <Link href="/terms" className="transition hover:text-white">Публичная оферта</Link>
-            <Link href="/consent" className="transition hover:text-white">Согласие на обработку ПДн</Link>
+            <Link href="/privacy" className="transition hover:text-white focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 focus-visible:outline-none">Политика конфиденциальности</Link>
+            <Link href="/terms" className="transition hover:text-white focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 focus-visible:outline-none">Публичная оферта</Link>
+            <Link href="/consent" className="transition hover:text-white focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 focus-visible:outline-none">Согласие на обработку ПДн</Link>
           </nav>
         </div>
       </div>

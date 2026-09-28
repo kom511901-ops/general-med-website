@@ -54,9 +54,10 @@ export default function CategoryCard({ category, className }: CategoryCardProps)
           <div className="relative mt-6 aspect-video overflow-hidden rounded-xl">
             <Image
               src={category.image}
-              alt={category.name}
+              alt={`${category.name}: ${category.description}`}
               fill
               sizes="(max-width: 768px) 100vw, 66vw"
+              loading="lazy"
               className="object-cover transition-transform duration-500 group-hover:scale-105"
             />
           </div>
