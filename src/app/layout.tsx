@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import ThemeProvider from '@/components/common/theme-provider';
 import Header from '@/components/layout/header';
+import Footer from '@/components/layout/footer';
 import { Toaster } from '@/components/ui/sonner';
 import './globals.css';
 
@@ -36,6 +37,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           <Header />
           {children}
+          <Footer />
           <Toaster />
         </ThemeProvider>
       </body>

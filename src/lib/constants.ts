@@ -5,7 +5,54 @@ export const COMPANY = {
   email: 'info@general-med.ru',
   telegram: 'https://t.me/kompleksnye_resheniya',
   whatsapp: 'https://wa.me/792097712111',
+  address: 'Москва, Дмитровское шоссе 71Б, офис 515',
+  inn: '9728009541',
+  ogrn: '1207700277641',
+  workingHours: 'Пн-Пт с 9:00 до 19:00 МСК',
 };
+
+export const FOOTER_LINKS = [
+  {
+    title: 'Каталог',
+    links: [
+      { href: '/catalog/uzi', label: 'УЗИ-аппараты' },
+      { href: '/catalog/rentgen', label: 'Рентген' },
+      { href: '/catalog/kt-mrt', label: 'КТ и МРТ' },
+      { href: '/catalog/endoskopy', label: 'Эндоскопия' },
+      { href: '/catalog/lor', label: 'ЛОР-оборудование' },
+      { href: '/catalog/anesteziya', label: 'Анестезия' },
+    ],
+  },
+  {
+    title: 'Компания',
+    links: [
+      { href: '/about', label: 'О нас' },
+      { href: '/cases', label: 'Кейсы' },
+      { href: '/knowledge', label: 'База знаний' },
+      { href: '/service', label: 'Сервис' },
+      { href: '/exclusive', label: 'Эксклюзив' },
+    ],
+  },
+  {
+    title: 'Поддержка',
+    links: [
+      { href: '/contacts', label: 'Контакты' },
+      { href: '/warranty', label: 'Гарантия' },
+      { href: '/leasing', label: 'Лизинг' },
+      { href: '/#faq', label: 'FAQ' },
+      { href: '/delivery', label: 'Доставка' },
+    ],
+  },
+  {
+    title: 'Партнёрам',
+    links: [
+      { href: '/for-vendors', label: 'Стать поставщиком' },
+      { href: '/for-clinics', label: 'Крупным сетям' },
+      { href: '/lizing-partners', label: 'Лизинговым компаниям' },
+      { href: '/press', label: 'Пресс-центр' },
+    ],
+  },
+];
 
 export const METRICS = [
   { value: 500, suffix: '+', label: 'реализованных проектов' },
