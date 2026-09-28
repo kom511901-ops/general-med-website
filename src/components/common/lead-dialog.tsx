@@ -7,6 +7,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from '@/components/ui/dialog';
+import LeadForm from '@/components/common/lead-form';
 
 interface LeadDialogProps {
   open: boolean;
@@ -16,11 +17,12 @@ interface LeadDialogProps {
 export default function LeadDialog({ open, onOpenChange }: LeadDialogProps) {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent>
+      <DialogContent className="max-h-[90vh] max-w-lg overflow-y-auto">
         <DialogHeader>
           <DialogTitle>Оставить заявку</DialogTitle>
-          <DialogDescription>Форма скоро появится.</DialogDescription>
+          <DialogDescription>Оставьте контакты, и мы свяжемся с вами в течение 30 минут.</DialogDescription>
         </DialogHeader>
+        <LeadForm onSuccess={() => onOpenChange(false)} />
       </DialogContent>
     </Dialog>
   );

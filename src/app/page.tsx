@@ -8,6 +8,7 @@ import Exclusive from '@/components/sections/exclusive';
 import Steps from '@/components/sections/steps';
 import Testimonials from '@/components/sections/testimonials';
 import FAQ from '@/components/sections/faq';
+import FinalCta from '@/components/sections/final-cta';
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
       <Steps />
       <Testimonials />
       <FAQ />
+      <FinalCta />
     </main>
   );
 }
