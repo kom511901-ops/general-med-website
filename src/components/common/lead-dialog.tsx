@@ -17,12 +17,12 @@ interface LeadDialogProps {
 export default function LeadDialog({ open, onOpenChange }: LeadDialogProps) {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-h-[90vh] max-w-lg overflow-y-auto">
+      <DialogContent className="max-h-[90vh] overflow-y-auto sm:max-w-md">
         <DialogHeader>
           <DialogTitle>Оставить заявку</DialogTitle>
-          <DialogDescription>Оставьте контакты, и мы свяжемся с вами в течение 30 минут.</DialogDescription>
+          <DialogDescription>Перезвоним в течение 30 минут</DialogDescription>
         </DialogHeader>
-        <LeadForm onSuccess={() => onOpenChange(false)} />
+        <LeadForm variant="dialog" onSuccess={() => onOpenChange(false)} />
       </DialogContent>
     </Dialog>
   );

@@ -3,6 +3,7 @@ import LogoCloud from '@/components/sections/logo-cloud';
 import Categories from '@/components/sections/categories';
 import WhyUs from '@/components/sections/why-us';
 import RoiCalculator from '@/components/sections/roi-calculator';
+import CtaBanner from '@/components/sections/cta-banner';
 import Cases from '@/components/sections/cases';
 import Exclusive from '@/components/sections/exclusive';
 import Steps from '@/components/sections/steps';
@@ -18,6 +19,7 @@ export default function Home() {
       <Categories />
       <WhyUs />
       <RoiCalculator />
+      <CtaBanner />
       <Cases />
       <Exclusive />
       <Steps />

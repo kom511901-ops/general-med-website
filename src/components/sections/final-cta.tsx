@@ -23,7 +23,7 @@ export default function FinalCta() {
       <div aria-hidden="true" className="absolute inset-0 opacity-10 [background-image:radial-gradient(rgba(255,255,255,0.9)_1px,transparent_1px)] [background-size:24px_24px]" />
       <Section className="relative">
         <div className="container relative mx-auto max-w-5xl px-6 lg:px-8">
-          <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
+          <div className="grid items-start gap-12 lg:grid-cols-[1.1fr_0.9fr]">
             <div>
               <SectionHeading
                 eyebrow={FINAL_CTA_SECTION.eyebrow}
