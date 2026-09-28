@@ -23,6 +23,8 @@ import {
 } from '@/components/ui/select';
 import { Slider } from '@/components/ui/slider';
 import { cn } from '@/lib/utils';
+import SectionHeading from '@/components/ui/section-heading';
+import Section from '@/components/ui/section';
 
 const EQUIPMENT_OPTIONS = [
   { name: 'УЗИ', cost: 3_000_000 },
@@ -112,15 +114,14 @@ export default function RoiCalculator() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-100px' }}
         transition={{ duration: prefersReducedMotion ? 0 : 0.6 }}
-        className="bg-white py-20 md:py-28 lg:py-32 dark:bg-neutral-950"
+        className="bg-white dark:bg-neutral-950"
       >
+        <Section>
         <div className="container mx-auto max-w-7xl px-6 lg:px-8">
-          <h2 className="text-balance text-center text-[clamp(32px,4vw,56px)] font-extrabold tracking-tight">
-            Посчитайте окупаемость оборудования
-          </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-center text-lg text-neutral-500">
-            Введите параметры вашей клиники — покажем срок возврата инвестиций и прибыль за первый год
-          </p>
+          <SectionHeading
+            title="Посчитайте окупаемость оборудования"
+            subtitle="Введите параметры вашей клиники — покажем срок возврата инвестиций и прибыль за первый год"
+          />
 
           <div className="mt-16 grid gap-8 lg:grid-cols-2 lg:gap-12">
             <div
@@ -263,6 +264,7 @@ export default function RoiCalculator() {
             </div>
           </div>
         </div>
+        </Section>
       </motion.section>
       <LeadDialog open={isLeadDialogOpen} onOpenChange={setIsLeadDialogOpen} />
     </>

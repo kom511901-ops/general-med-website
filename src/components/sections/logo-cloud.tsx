@@ -3,6 +3,7 @@
 import { motion, useReducedMotion } from 'framer-motion';
 import PlaceholderLogo from '@/components/common/placeholder-logo';
 import { CLIENT_LOGOS } from '@/lib/constants';
+import Section from '@/components/ui/section';
 
 const repeatedClientLogos = [...CLIENT_LOGOS, ...CLIENT_LOGOS];
 
@@ -15,8 +16,9 @@ export default function LogoCloud() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-100px' }}
       transition={{ duration: prefersReducedMotion ? 0 : 0.6 }}
-      className="border-y border-neutral-200 bg-white py-16 md:py-20 dark:border-neutral-800 dark:bg-neutral-950"
+      className="border-y border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950"
     >
+      <Section>
       <div className="container mx-auto max-w-7xl px-6 lg:px-8">
         <p className="text-center text-sm font-medium tracking-wider text-neutral-500 uppercase">
           Нам доверяют 500+ клиник от Калининграда до Владивостока
@@ -38,6 +40,7 @@ export default function LogoCloud() {
           </div>
         </div>
       </div>
+      </Section>
     </motion.section>
   );
 }

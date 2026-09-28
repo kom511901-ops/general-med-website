@@ -4,6 +4,8 @@ import { motion, useReducedMotion } from 'framer-motion';
 import CategoryCard from '@/components/common/category-card';
 import { CATEGORIES } from '@/lib/constants';
 import { cn } from '@/lib/utils';
+import SectionHeading from '@/components/ui/section-heading';
+import Section from '@/components/ui/section';
 
 export default function Categories() {
   const prefersReducedMotion = useReducedMotion();
@@ -15,15 +17,15 @@ export default function Categories() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-100px' }}
       transition={{ duration: prefersReducedMotion ? 0 : 0.6 }}
-      className="bg-white py-20 md:py-28 lg:py-32 dark:bg-neutral-950"
+      className="bg-white dark:bg-neutral-950"
     >
+      <Section>
       <div className="container mx-auto max-w-7xl px-6 lg:px-8">
-        <h2 className="text-balance text-[clamp(32px,4vw,56px)] font-extrabold tracking-tight">
-          Оборудование для любых задач
-        </h2>
-        <p className="mt-4 max-w-2xl text-lg text-neutral-500">
-          От базовой диагностики до экспертных решений — подберём под бюджет и специфику клиники
-        </p>
+        <SectionHeading
+          title="Оборудование для любых задач"
+          subtitle="От базовой диагностики до экспертных решений — подберём под бюджет и специфику клиники"
+          align="left"
+        />
 
         <div className="mt-16 grid auto-rows-fr grid-cols-1 gap-4 md:grid-cols-3 md:grid-rows-2 md:gap-6">
           {CATEGORIES.map((category, index) => (
@@ -43,6 +45,7 @@ export default function Categories() {
           ))}
         </div>
       </div>
+      </Section>
     </motion.section>
   );
 }

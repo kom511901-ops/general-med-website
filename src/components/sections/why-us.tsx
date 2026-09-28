@@ -4,6 +4,8 @@ import { motion, useReducedMotion } from 'framer-motion';
 import { CreditCard, Layers, MapPin } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import SectionHeading from '@/components/ui/section-heading';
+import Section from '@/components/ui/section';
 
 const ADVANTAGES = [
   {
@@ -42,15 +44,14 @@ export default function WhyUs() {
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, margin: '-100px' }}
       transition={{ duration: prefersReducedMotion ? 0 : 0.6 }}
-      className="bg-neutral-50 py-20 md:py-28 lg:py-32 dark:bg-neutral-900/50"
+      className="bg-neutral-50 dark:bg-neutral-900/50"
     >
+      <Section>
       <div className="container mx-auto max-w-7xl px-6 lg:px-8">
-        <h2 className="text-balance text-center text-[clamp(32px,4vw,56px)] font-extrabold tracking-tight">
-          Почему нас выбирают 500+ клиник
-        </h2>
-        <p className="mx-auto mt-4 max-w-2xl text-center text-lg text-neutral-500">
-          Мы не просто поставщик оборудования — мы партнёр, который отвечает за результат
-        </p>
+        <SectionHeading
+          title="Почему нас выбирают 500+ клиник"
+          subtitle="Мы не просто поставщик оборудования — мы партнёр, который отвечает за результат"
+        />
 
         <div className="mt-16 grid gap-8 md:grid-cols-3">
           {ADVANTAGES.map((advantage, index) => {
@@ -80,6 +81,7 @@ export default function WhyUs() {
           })}
         </div>
       </div>
+      </Section>
     </motion.section>
   );
 }

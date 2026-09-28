@@ -10,6 +10,8 @@ import {
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { STEPS_SECTION, WORK_STEPS } from '@/lib/constants';
+import SectionHeading from '@/components/ui/section-heading';
+import Section from '@/components/ui/section';
 
 const STEP_ICONS: Record<(typeof WORK_STEPS)[number]['icon'], LucideIcon> = {
   MessageSquare,
@@ -25,33 +27,23 @@ export default function Steps() {
   return (
     <motion.section
       id="steps"
-      aria-labelledby="steps-heading"
       initial={prefersReducedMotion ? false : { opacity: 0, y: 20 }}
       whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-100px' }}
       transition={{ duration: prefersReducedMotion ? 0 : 0.5 }}
-      className="py-20 md:py-28 lg:py-32"
     >
+      <Section>
       <div className="container mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-3xl text-center">
-          <span className="inline-flex rounded-full border border-brand-500/20 bg-brand-500/5 px-4 py-2 text-sm font-semibold text-brand-600 dark:text-brand-100">
-            {STEPS_SECTION.eyebrow}
-          </span>
-          <h2
-            id="steps-heading"
-            className="mt-5 text-balance text-center text-[clamp(32px,4vw,56px)] font-extrabold tracking-tight"
-          >
-            {STEPS_SECTION.title}
-          </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-neutral-500 dark:text-neutral-400">
-            {STEPS_SECTION.subtitle}
-          </p>
-        </div>
+        <SectionHeading
+          eyebrow={STEPS_SECTION.eyebrow}
+          title={STEPS_SECTION.title}
+          subtitle={STEPS_SECTION.subtitle}
+        />
 
         <div className="relative mt-14">
           <motion.div
             aria-hidden="true"
-            className="absolute bottom-8 left-6 top-8 w-px origin-top bg-gradient-to-b from-brand-500 to-accent-500 lg:hidden"
+            className="absolute bottom-8 left-6 top-8 w-0.5 origin-top bg-gradient-to-b from-brand-500 to-accent-500 lg:hidden"
             initial={prefersReducedMotion ? false : { scaleY: 0 }}
             whileInView={prefersReducedMotion ? undefined : { scaleY: 1 }}
             viewport={{ once: true, margin: '-100px' }}
@@ -59,7 +51,7 @@ export default function Steps() {
           />
           <motion.div
             aria-hidden="true"
-            className="absolute left-[10%] right-[10%] top-6 hidden h-px origin-left bg-gradient-to-r from-brand-500 to-accent-500 lg:block"
+            className="absolute left-[10%] right-[10%] top-6 hidden h-0.5 origin-left bg-gradient-to-r from-brand-500 to-accent-500 lg:block"
             initial={prefersReducedMotion ? false : { scaleX: 0 }}
             whileInView={prefersReducedMotion ? undefined : { scaleX: 1 }}
             viewport={{ once: true, margin: '-100px' }}
@@ -93,7 +85,7 @@ export default function Steps() {
                     {step.number}
                   </div>
 
-                  <div className="min-w-0 pb-2 lg:flex lg:flex-col lg:items-center">
+                  <div className="min-w-0 flex-1 pb-2 lg:flex lg:h-full lg:flex-col lg:items-center">
                     <div className="flex size-11 items-center justify-center rounded-xl border border-brand-500/15 bg-brand-500/5 text-brand-500">
                       <StepIcon aria-hidden="true" className="size-5" strokeWidth={1.75} />
                     </div>
@@ -101,9 +93,11 @@ export default function Steps() {
                     <p className="mt-2 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
                       {step.description}
                     </p>
-                    <span className="mt-4 inline-flex rounded-full border border-border bg-background px-3 py-1.5 text-xs font-medium text-neutral-600 dark:text-neutral-300">
-                      {step.duration}
-                    </span>
+                    <div className="mt-4 pt-4 lg:mt-auto">
+                      <span className="inline-flex rounded-full border border-border bg-background px-3 py-1.5 text-xs font-medium text-neutral-600 dark:text-neutral-300">
+                        {step.duration}
+                      </span>
+                    </div>
                   </div>
                 </motion.li>
               );
@@ -120,6 +114,7 @@ export default function Steps() {
           </a>
         </div>
       </div>
+      </Section>
     </motion.section>
   );
 }

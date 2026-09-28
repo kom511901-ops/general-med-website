@@ -5,7 +5,8 @@ import { motion, useReducedMotion } from 'framer-motion';
 import { ArrowRight, Scan, ScanLine } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { EXCLUSIVE_BRANDS, EXCLUSIVE_SECTION } from '@/lib/constants';
-import { cn } from '@/lib/utils';
+import SectionHeading from '@/components/ui/section-heading';
+import Section from '@/components/ui/section';
 
 const BRAND_ICONS: Record<(typeof EXCLUSIVE_BRANDS)[number]['icon'], LucideIcon> = {
   Scan,
@@ -18,27 +19,18 @@ export default function Exclusive() {
   return (
     <motion.section
       id="exclusive"
-      aria-labelledby="exclusive-heading"
       initial={prefersReducedMotion ? false : { opacity: 0, y: 20 }}
       whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-100px' }}
       transition={{ duration: prefersReducedMotion ? 0 : 0.5 }}
-      className={cn('py-20 md:py-28 lg:py-32')}
     >
+      <Section>
       <div className="container mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-3xl text-center">
-          <span className="inline-flex rounded-full border border-brand-500/20 bg-brand-500/5 px-4 py-2 text-sm font-semibold text-brand-600 dark:text-brand-100">
-            {EXCLUSIVE_SECTION.eyebrow}
-          </span>
-          <h2
-            id="exclusive-heading"
-            className="mt-5 text-balance text-center text-[clamp(32px,4vw,56px)] font-extrabold tracking-tight"
-          >
-            {EXCLUSIVE_SECTION.title}
-          </h2>
-        <p className="mx-auto mt-4 max-w-2xl text-lg text-neutral-500 dark:text-neutral-400">
-          {EXCLUSIVE_SECTION.subtitle}
-        </p>
+        <SectionHeading
+          eyebrow={EXCLUSIVE_SECTION.eyebrow}
+          title={EXCLUSIVE_SECTION.title}
+          subtitle={EXCLUSIVE_SECTION.subtitle}
+        />
         <ul
           className="mt-8 flex flex-wrap justify-center gap-2"
           aria-label="Преимущества поставки"
@@ -52,8 +44,6 @@ export default function Exclusive() {
             </li>
           ))}
         </ul>
-        </div>
-
         <motion.div
           className="mt-10 grid gap-6 lg:grid-cols-2"
           variants={{
@@ -146,6 +136,7 @@ export default function Exclusive() {
           })}
         </motion.div>
       </div>
+      </Section>
     </motion.section>
   );
 }

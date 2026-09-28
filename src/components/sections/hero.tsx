@@ -9,6 +9,7 @@ import { Badge } from '@/components/ui/badge';
 import LeadDialog from '@/components/common/lead-dialog';
 import CountUp from '@/components/common/count-up';
 import { METRICS } from '@/lib/constants';
+import Section from '@/components/ui/section';
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -47,7 +48,7 @@ export default function Hero() {
 
   return (
     <>
-      <section className="relative overflow-hidden py-20 md:py-28 lg:py-32">
+      <section className="relative overflow-hidden">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute top-[-160px] left-[-160px] size-[500px] rounded-full bg-brand-500/15 blur-3xl"
@@ -61,6 +62,7 @@ export default function Hero() {
           className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle,rgba(0,0,0,0.05)_1px,transparent_1px)] bg-[length:24px_24px] opacity-40 dark:bg-[radial-gradient(circle,rgba(255,255,255,0.05)_1px,transparent_1px)]"
         />
 
+        <Section>
         <div className="container mx-auto max-w-7xl px-6 lg:px-8">
           <div className="relative z-10 grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
             <motion.div
@@ -172,6 +174,7 @@ export default function Hero() {
             </div>
           </div>
         </div>
+        </Section>
       </section>
       <LeadDialog open={isLeadDialogOpen} onOpenChange={setIsLeadDialogOpen} />
     </>

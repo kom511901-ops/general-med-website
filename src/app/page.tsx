@@ -6,6 +6,7 @@ import RoiCalculator from '@/components/sections/roi-calculator';
 import Cases from '@/components/sections/cases';
 import Exclusive from '@/components/sections/exclusive';
 import Steps from '@/components/sections/steps';
+import Testimonials from '@/components/sections/testimonials';
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <Cases />
       <Exclusive />
       <Steps />
+      <Testimonials />
     </main>
   );
 }
