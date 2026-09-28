@@ -210,18 +210,15 @@ export const EXCLUSIVE_BRANDS: ExclusiveBrand[] = [
 
 export interface WorkStep {
   number: string;
-  icon: 'MessageSquare' | 'ClipboardList' | 'FileSignature' | 'Truck' | 'Wrench';
+  icon: 'MessageSquare' | 'Search' | 'FileText' | 'Wrench' | 'ShieldCheck';
   title: string;
   description: string;
-  duration: string;
 }
 
 export const STEPS_SECTION = {
   eyebrow: 'Как мы работаем',
-  title: 'От заявки до первого пациента',
-  subtitle:
-    'Берём на себя весь цикл — вам не нужно координировать поставщиков, монтажников и сервис',
-  cta: 'Обсудить задачу',
+  title: 'От первой заявки до сервисной поддержки',
+  subtitle: 'Прозрачный процесс из 5 этапов. Точные сроки, никаких скрытых доработок.',
 };
 
 export const WORK_STEPS: WorkStep[] = [
@@ -229,36 +226,36 @@ export const WORK_STEPS: WorkStep[] = [
     number: '01',
     icon: 'MessageSquare',
     title: 'Консультация',
-    description: 'Разбираем задачи клиники, профиль пациентов и бюджет',
-    duration: '30 минут',
+    description:
+      'Разбираем задачи клиники, специализацию, объём пациентопотока, бюджет. Согласуем требования и SLA.',
   },
   {
     number: '02',
-    icon: 'ClipboardList',
-    title: 'Подбор оборудования',
-    description: 'Готовим 2–3 варианта конфигурации под ваш бюджет с расчётом окупаемости',
-    duration: '1–3 дня',
+    icon: 'Search',
+    title: 'Подбор',
+    description:
+      'Предлагаем 2-3 варианта оборудования разных производителей под ваш бюджет и профиль. Прогоняем через ROI-калькулятор.',
   },
   {
     number: '03',
-    icon: 'FileSignature',
+    icon: 'FileText',
     title: 'Договор и финансирование',
-    description: 'Прямая покупка, лизинг или рассрочка; помогаем с документами для лицензии',
-    duration: 'от 1 дня',
+    description:
+      'Заключаем договор поставки. Оформляем лизинг от 0% или рассрочку — работаем с 15+ лизинговыми компаниями.',
   },
   {
     number: '04',
-    icon: 'Truck',
-    title: 'Поставка и монтаж',
-    description: 'Доставка, монтаж, ввод в эксплуатацию и обучение персонала',
-    duration: 'по графику поставки',
+    icon: 'Wrench',
+    title: 'Монтаж и обучение',
+    description:
+      'Доставка, монтаж, пусконаладка, лицензирование. Обучаем врачей и медтехников работе с оборудованием.',
   },
   {
     number: '05',
-    icon: 'Wrench',
+    icon: 'ShieldCheck',
     title: 'Сервис',
-    description: 'Гарантийное и постгарантийное обслуживание, удалённая поддержка',
-    duration: 'весь срок службы',
+    description:
+      'Гарантия 3 года. SLA 24 часа на критичное оборудование. Собственный склад запчастей — быстрая замена узлов.',
   },
 ];
 
