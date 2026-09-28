@@ -29,9 +29,10 @@ export default function CaseCard({ caseItem }: CaseCardProps) {
           <Image
             src={caseItem.image}
             alt={caseItem.clinicName}
-            fill
+            width={800}
+            height={450}
             sizes="(max-width: 768px) 100vw, 33vw"
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
         ) : (
           <div

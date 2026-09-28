@@ -121,6 +121,9 @@ export interface Case {
   image?: string;
 }
 
+const CASE_PLACEHOLDER_IMAGE =
+  'https://images.unsplash.com/photo-1631549916768-4119b2e5f926?auto=format&fit=crop&w=1600&q=85';
+
 export const CASES: Case[] = [
   {
     slug: 'medexpert-network',
@@ -132,7 +135,7 @@ export const CASES: Case[] = [
     metricLabel: 'к пропускной способности',
     description:
       'Оснастили 8 диагностических центров экспертными УЗИ-аппаратами Samsung HERA W10. Обучили 24 врача, запустили удалённое обслуживание.',
-    image: 'https://images.unsplash.com/photo-1631549916768-4119b2e5f926?auto=format&fit=crop&w=1600&q=85',
+    image: CASE_PLACEHOLDER_IMAGE,
   },
   {
     slug: 'kazan-ct-center',
@@ -144,6 +147,7 @@ export const CASES: Case[] = [
     metricLabel: 'от договора до первого пациента',
     description:
       'Запустили КТ-кабинет с 80-срезовым Canon Aquilion Lightning под ключ: подготовка помещения, монтаж, помощь с лицензированием, обучение.',
+    image: CASE_PLACEHOLDER_IMAGE,
   },
   {
     slug: 'novosibirsk-lor',
@@ -155,7 +159,7 @@ export const CASES: Case[] = [
     metricLabel: 'полный цикл от подбора до старта',
     description:
       'Оснастили специализированный ЛОР-центр: комбайны ATMOS, микроскопы Zeiss, эндоскопические стойки Karl Storz, аудиометры Interacoustics.',
-    image: 'https://images.unsplash.com/photo-1631549916768-4119b2e5f926?auto=format&fit=crop&w=1600&q=85',
+    image: CASE_PLACEHOLDER_IMAGE,
   },
 ];
 
